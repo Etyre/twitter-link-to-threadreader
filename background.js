@@ -1,3 +1,12 @@
+// Open in ThreadReader: MV3 service worker for the Chrome extension. Registers the
+// "Open in ThreadReader" context-menu items (on tweet links and on tweet pages),
+// receives option-click messages from content.js, and opens
+// https://threadreaderapp.com/thread/<tweet id>.html in a new tab or window.
+//
+// Settings ({openIn: "tab"|"window", altClick: bool}) live in chrome.storage.sync,
+// edited via options.html. There are no files on disk and no log file; errors go to
+// the service worker console (chrome://extensions -> Details -> Inspect views).
+
 importScripts("tweet-url.js");
 
 const MENU_LINK = "open-link-in-threadreader";
